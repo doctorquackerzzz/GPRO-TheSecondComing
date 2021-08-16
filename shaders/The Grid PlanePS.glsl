@@ -9,7 +9,7 @@ in vec3 vPos;
 
 
 void main() {
-   if(fract(vTexCoord.x / 0.1f) < 0.1f || fract(vTexCoord.y / 0.1f) < 0.1f)
+   if(fract(vTexCoord.x / 0.05f) < 0.1f || fract(vTexCoord.y / 0.05f) < 0.1f)
    cFragColor = lineColor;
    else
    cFragColor = vec4(0);

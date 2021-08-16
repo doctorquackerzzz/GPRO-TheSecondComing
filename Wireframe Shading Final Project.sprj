@@ -10,18 +10,19 @@
 				<item value="Normal" semantic="NORMAL" />
 				<item value="Texcoord" semantic="TEXCOORD0" />
 			</inputlayout>
-			<rendertexture />
+			<rendertexture name="The Final Scene" />
 			<items>
 				<item name="sgrqerfq" type="geometry">
 					<type>Sphere</type>
 					<width>1</width>
 					<height>1</height>
 					<depth>1</depth>
-					<scaleX>3</scaleX>
-					<scaleY>3</scaleY>
-					<scaleZ>3</scaleZ>
+					<scaleX>9</scaleX>
+					<scaleY>9</scaleY>
+					<scaleZ>9</scaleZ>
 					<pitch>1.57079637</pitch>
-					<y>7.80237484</y>
+					<x>-8.72145462</x>
+					<y>4.93704796</y>
 					<topology>TriangleList</topology>
 				</item>
 			</items>
@@ -114,7 +115,7 @@
 				<item value="Normal" semantic="NORMAL" />
 				<item value="Texcoord" semantic="TEXCOORD0" />
 			</inputlayout>
-			<rendertexture />
+			<rendertexture name="The Final Scene" />
 			<items>
 				<item name="The Grid Plane Geo" type="geometry">
 					<type>Plane</type>
@@ -124,7 +125,7 @@
 					<scaleX>50</scaleX>
 					<scaleY>50</scaleY>
 					<pitch>1.57079637</pitch>
-					<y>0.372655869</y>
+					<y>-17.2118378</y>
 					<topology>TriangleList</topology>
 				</item>
 			</items>
@@ -151,13 +152,18 @@
 				<item value="Normal" semantic="NORMAL" />
 				<item value="Texcoord" semantic="TEXCOORD0" />
 			</inputlayout>
-			<rendertexture />
+			<rendertexture name="The Final Scene" />
 			<items>
 				<item name="MatrixTex" type="geometry">
 					<type>Cube</type>
 					<width>1</width>
 					<height>1</height>
 					<depth>1</depth>
+					<scaleX>50</scaleX>
+					<scaleY>50</scaleY>
+					<yaw>4.71238899</yaw>
+					<x>22.629509</x>
+					<y>1.55146217</y>
 					<topology>TriangleList</topology>
 				</item>
 			</items>
@@ -168,16 +174,35 @@
 			</variables>
 			<macros />
 		</pass>
+		<pass name="The Final Scene " type="shader" active="true" patchverts="1">
+			<shader type="vs" path="shaders\The Final Scene VS.glsl" entry="main" />
+			<shader type="ps" path="shaders\The Final Scene PS.glsl" entry="main" />
+			<inputlayout>
+				<item value="Position" semantic="POSITION" />
+				<item value="Normal" semantic="NORMAL" />
+				<item value="Texcoord" semantic="TEXCOORD0" />
+			</inputlayout>
+			<rendertexture />
+			<items />
+			<itemvalues />
+			<macros />
+		</pass>
 	</pipeline>
 	<objects>
-		<object type="texture" path="..\e559c582fa17ad0f7672cd45e972b434.jpg" vflip="false" min_filter="Linear" mag_filter="Nearest" wrap_s="Repeat" wrap_t="Repeat">
+		<object type="texture" path="..\e559c582fa17ad0f7672cd45e972b434.jpg" vflip="false" min_filter="Linear" mag_filter="Nearest" wrap_s="Repeat" wrap_t="Repeat" />
+		<object type="texture" path="..\1.jpg" vflip="false" min_filter="Linear" mag_filter="Nearest" wrap_s="Repeat" wrap_t="Repeat">
 			<bind slot="0" name="Matrix Texture Cube" />
 		</object>
+		<object type="rendertexture" name="The Final Scene" format="RGB" rsize="1.000000,1.000000" clear="true" />
 	</objects>
 	<cameras />
 	<settings>
+		<entry type="property" name="The Shader for the Sun" item="pipe" />
 		<entry type="file" name="Matrix Texture Cube" shader="vs" />
 		<entry type="file" name="Matrix Texture Cube" shader="ps" />
+		<entry type="file" name="The Shader for the Sun" shader="vs" />
+		<entry type="file" name="The Shader for the Sun" shader="ps" />
+		<entry type="file" name="The Shader for the Sun" shader="gs" />
 		<entry type="pinned" name="Material.Kd" owner="The Shader for the Sun" />
 		<entry type="pinned" name="Material.Ks" owner="The Shader for the Sun" />
 		<entry type="pinned" name="Material.Ka" owner="The Shader for the Sun" />
@@ -188,9 +213,9 @@
 		<entry type="pinned" name="Light.Position" owner="The Shader for the Sun" />
 		<entry type="pinned" name="Line.Color" owner="The Shader for the Sun" />
 		<entry type="camera" fp="false">
-			<distance>47</distance>
-			<pitch>14</pitch>
-			<yaw>93</yaw>
+			<distance>50</distance>
+			<pitch>7</pitch>
+			<yaw>92</yaw>
 			<roll>360</roll>
 		</entry>
 		<entry type="clearcolor" r="0" g="0" b="0" a="0" />
