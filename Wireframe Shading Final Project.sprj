@@ -17,8 +17,11 @@
 					<width>1</width>
 					<height>1</height>
 					<depth>1</depth>
+					<scaleX>3</scaleX>
+					<scaleY>3</scaleY>
+					<scaleZ>3</scaleZ>
 					<pitch>1.57079637</pitch>
-					<y>2.53675628</y>
+					<y>7.80237484</y>
 					<topology>TriangleList</topology>
 				</item>
 			</items>
@@ -140,16 +143,41 @@
 			</variables>
 			<macros />
 		</pass>
+		<pass name="Matrix Texture Cube" type="shader" active="true" patchverts="1">
+			<shader type="vs" path="shaders\Matrix Texture CubeVS.glsl" entry="main" />
+			<shader type="ps" path="shaders\Matrix Texture CubePS.glsl" entry="main" />
+			<inputlayout>
+				<item value="Position" semantic="POSITION" />
+				<item value="Normal" semantic="NORMAL" />
+				<item value="Texcoord" semantic="TEXCOORD0" />
+			</inputlayout>
+			<rendertexture />
+			<items>
+				<item name="MatrixTex" type="geometry">
+					<type>Cube</type>
+					<width>1</width>
+					<height>1</height>
+					<depth>1</depth>
+					<topology>TriangleList</topology>
+				</item>
+			</items>
+			<itemvalues />
+			<variables>
+				<variable type="float4x4" name="ModelViewMatrix" system="GeometryTransform" />
+				<variable type="float4x4" name="MVP" system="ViewProjection" />
+			</variables>
+			<macros />
+		</pass>
 	</pipeline>
 	<objects>
-		<object type="texture" path="..\e559c582fa17ad0f7672cd45e972b434.jpg" vflip="false" min_filter="Linear" mag_filter="Nearest" wrap_s="Repeat" wrap_t="Repeat" />
+		<object type="texture" path="..\e559c582fa17ad0f7672cd45e972b434.jpg" vflip="false" min_filter="Linear" mag_filter="Nearest" wrap_s="Repeat" wrap_t="Repeat">
+			<bind slot="0" name="Matrix Texture Cube" />
+		</object>
 	</objects>
 	<cameras />
 	<settings>
-		<entry type="property" name="The Grid Plane Geo" item="pipe" />
-		<entry type="file" name="The Shader for the Sun" shader="vs" />
-		<entry type="file" name="The Shader for the Sun" shader="ps" />
-		<entry type="file" name="The Shader for the Sun" shader="gs" />
+		<entry type="file" name="Matrix Texture Cube" shader="vs" />
+		<entry type="file" name="Matrix Texture Cube" shader="ps" />
 		<entry type="pinned" name="Material.Kd" owner="The Shader for the Sun" />
 		<entry type="pinned" name="Material.Ks" owner="The Shader for the Sun" />
 		<entry type="pinned" name="Material.Ka" owner="The Shader for the Sun" />
@@ -160,9 +188,9 @@
 		<entry type="pinned" name="Light.Position" owner="The Shader for the Sun" />
 		<entry type="pinned" name="Line.Color" owner="The Shader for the Sun" />
 		<entry type="camera" fp="false">
-			<distance>30</distance>
-			<pitch>24</pitch>
-			<yaw>90</yaw>
+			<distance>47</distance>
+			<pitch>14</pitch>
+			<yaw>93</yaw>
 			<roll>360</roll>
 		</entry>
 		<entry type="clearcolor" r="0" g="0" b="0" a="0" />
