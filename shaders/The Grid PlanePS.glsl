@@ -1,8 +1,16 @@
-#version 330
+#version 450
 
-in vec4 color;
-out vec4 outColor;
+uniform vec4 lineColor;
+
+layout (location = 0) out vec4 cFragColor;
+
+in vec3 vTexCoord;
+in vec3 vPos;
+
 
 void main() {
-   outColor = vec4(color);
+   if(fract(vTexCoord.x / 0.1f) < 0.1f || fract(vTexCoord.y / 0.1f) < 0.1f)
+   cFragColor = lineColor;
+   else
+   cFragColor = vec4(0);
 }

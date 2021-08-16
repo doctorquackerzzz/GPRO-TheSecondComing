@@ -4,7 +4,7 @@
 		<pass name="The Shader for the Sun" type="shader" active="true" patchverts="1">
 			<shader type="vs" path="shaders\The Shader for the SunVS.glsl" entry="main" />
 			<shader type="ps" path="shaders\The Shader for the SunPS.glsl" entry="main" />
-			<shader used="false" type="gs" path="shaders\The Shader for the SunGS.glsl" entry="main" />
+			<shader used="true" type="gs" path="shaders\The Shader for the SunGS.glsl" entry="main" />
 			<inputlayout>
 				<item value="Position" semantic="POSITION" />
 				<item value="Normal" semantic="NORMAL" />
@@ -12,21 +12,18 @@
 			</inputlayout>
 			<rendertexture />
 			<items>
-				<item name="The Sun" type="geometry">
+				<item name="sgrqerfq" type="geometry">
 					<type>Sphere</type>
 					<width>1</width>
 					<height>1</height>
 					<depth>1</depth>
-					<x>0.195771217</x>
-					<y>0.192297757</y>
-					<z>-0.0612549782</z>
+					<pitch>1.57079637</pitch>
+					<y>2.53675628</y>
 					<topology>TriangleList</topology>
 				</item>
 			</items>
 			<itemvalues />
 			<variables>
-				<variable type="float4x4" name="matVP" system="ViewProjection" />
-				<variable type="float4x4" name="matGeo" system="GeometryTransform" />
 				<variable type="float3" name="Material.Kd">
 					<row>
 						<value>0</value>
@@ -62,7 +59,7 @@
 				</variable>
 				<variable type="float4" name="Light.Position">
 					<row>
-						<value>1</value>
+						<value>0</value>
 						<value>0</value>
 						<value>0</value>
 						<value>0</value>
@@ -70,13 +67,34 @@
 				</variable>
 				<variable type="float" name="Line.Width">
 					<row>
-						<value>0</value>
+						<value>0.100000001</value>
 					</row>
 				</variable>
-				<variable type="float4" name="Line.lColor">
+				<variable type="float4x4" name="ViewportMatrix" system="View" />
+				<variable type="float3x3" name="NormalMatrix">
 					<row>
 						<value>0</value>
 						<value>0</value>
+						<value>0</value>
+					</row>
+					<row>
+						<value>0</value>
+						<value>0</value>
+						<value>0</value>
+					</row>
+					<row>
+						<value>0</value>
+						<value>0</value>
+						<value>0</value>
+					</row>
+				</variable>
+				<variable type="float4x4" name="ModelViewMatrix" system="GeometryTransform" />
+				<variable type="float4x4" name="MVP" system="ViewProjection" />
+				<variable type="float4x4" name="ProjectionMatrix" system="Projection" />
+				<variable type="float4" name="Line.Color">
+					<row>
+						<value>0</value>
+						<value>2</value>
 						<value>0</value>
 						<value>0</value>
 					</row>
@@ -100,9 +118,10 @@
 					<width>1</width>
 					<height>1</height>
 					<depth>1</depth>
-					<scaleX>10</scaleX>
-					<scaleY>10</scaleY>
+					<scaleX>50</scaleX>
+					<scaleY>50</scaleY>
 					<pitch>1.57079637</pitch>
+					<y>0.372655869</y>
 					<topology>TriangleList</topology>
 				</item>
 			</items>
@@ -110,29 +129,40 @@
 			<variables>
 				<variable type="float4x4" name="matVP" system="ViewProjection" />
 				<variable type="float4x4" name="matGeo" system="GeometryTransform" />
+				<variable type="float4" name="lineColor">
+					<row>
+						<value>0</value>
+						<value>1</value>
+						<value>0</value>
+						<value>0</value>
+					</row>
+				</variable>
 			</variables>
 			<macros />
 		</pass>
 	</pipeline>
-	<objects />
+	<objects>
+		<object type="texture" path="..\e559c582fa17ad0f7672cd45e972b434.jpg" vflip="false" min_filter="Linear" mag_filter="Nearest" wrap_s="Repeat" wrap_t="Repeat" />
+	</objects>
 	<cameras />
 	<settings>
-		<entry type="property" name="The Shader for the Sun" item="pipe" />
-		<entry type="file" name="The Grid Plane" shader="vs" />
-		<entry type="file" name="The Grid Plane" shader="ps" />
+		<entry type="property" name="The Grid Plane Geo" item="pipe" />
 		<entry type="file" name="The Shader for the Sun" shader="vs" />
 		<entry type="file" name="The Shader for the Sun" shader="ps" />
+		<entry type="file" name="The Shader for the Sun" shader="gs" />
 		<entry type="pinned" name="Material.Kd" owner="The Shader for the Sun" />
 		<entry type="pinned" name="Material.Ks" owner="The Shader for the Sun" />
 		<entry type="pinned" name="Material.Ka" owner="The Shader for the Sun" />
 		<entry type="pinned" name="Material.Shininess" owner="The Shader for the Sun" />
 		<entry type="pinned" name="Light.Intensity" owner="The Shader for the Sun" />
 		<entry type="pinned" name="Line.Width" owner="The Shader for the Sun" />
-		<entry type="pinned" name="Line.lColor" owner="The Shader for the Sun" />
+		<entry type="pinned" name="NormalMatrix" owner="The Shader for the Sun" />
+		<entry type="pinned" name="Light.Position" owner="The Shader for the Sun" />
+		<entry type="pinned" name="Line.Color" owner="The Shader for the Sun" />
 		<entry type="camera" fp="false">
-			<distance>7</distance>
-			<pitch>15</pitch>
-			<yaw>94</yaw>
+			<distance>30</distance>
+			<pitch>24</pitch>
+			<yaw>90</yaw>
 			<roll>360</roll>
 		</entry>
 		<entry type="clearcolor" r="0" g="0" b="0" a="0" />
