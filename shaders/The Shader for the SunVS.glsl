@@ -9,12 +9,6 @@ uniform mat4 ProjectionMatrix;
 uniform mat4 MVP;
 
 
-mat3 YRotation(float angle)
-{
-	float s =sin(angle);
-	float c =cos(angle);	
-	return mat3(c,0.0,-s,0.0,1.0,0.0,s,0.0,c);
-}
 void main()
 {
  VNormal = normalize( NormalMatrix * VertexNormal);

@@ -1,150 +1,48 @@
 <?xml version="1.0"?>
 <project version="2">
 	<pipeline>
-		<pass name="The Shader for the Sun" type="shader" active="true" patchverts="1">
-			<shader type="vs" path="shaders\The Shader for the SunVS.glsl" entry="main" />
-			<shader type="ps" path="shaders\The Shader for the SunPS.glsl" entry="main" />
-			<shader used="true" type="gs" path="shaders\The Shader for the SunGS.glsl" entry="main" />
+		<pass name="True Wireframe" type="shader" active="true" patchverts="1">
+			<shader type="vs" path="shaders\True WireframeVS.glsl" entry="main" />
+			<shader type="ps" path="shaders\True WireframePS.glsl" entry="main" />
+			<shader used="true" type="gs" path="shaders\True WireframeGS.glsl" entry="main" />
 			<inputlayout>
 				<item value="Position" semantic="POSITION" />
 				<item value="Normal" semantic="NORMAL" />
 				<item value="Texcoord" semantic="TEXCOORD0" />
 			</inputlayout>
-			<rendertexture name="The Final Scene" />
-			<items>
-				<item name="sgrqerfq" type="geometry">
-					<type>Sphere</type>
-					<width>1</width>
-					<height>1</height>
-					<depth>1</depth>
-					<scaleX>9</scaleX>
-					<scaleY>9</scaleY>
-					<scaleZ>9</scaleZ>
-					<pitch>1.57079637</pitch>
-					<x>-8.72145462</x>
-					<y>4.93704796</y>
-					<topology>TriangleList</topology>
-				</item>
-			</items>
+			<rendertexture />
+			<items />
 			<itemvalues />
-			<variables>
-				<variable type="float3" name="Material.Kd">
-					<row>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-				</variable>
-				<variable type="float3" name="Material.Ks">
-					<row>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-				</variable>
-				<variable type="float3" name="Material.Ka">
-					<row>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-				</variable>
-				<variable type="float" name="Material.Shininess">
-					<row>
-						<value>0</value>
-					</row>
-				</variable>
-				<variable type="float3" name="Light.Intensity">
-					<row>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-				</variable>
-				<variable type="float4" name="Light.Position">
-					<row>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-				</variable>
-				<variable type="float" name="Line.Width">
-					<row>
-						<value>0.100000001</value>
-					</row>
-				</variable>
-				<variable type="float4x4" name="ViewportMatrix" system="View" />
-				<variable type="float3x3" name="NormalMatrix">
-					<row>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-					<row>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-					<row>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-				</variable>
-				<variable type="float4x4" name="ModelViewMatrix" system="GeometryTransform" />
-				<variable type="float4x4" name="MVP" system="ViewProjection" />
-				<variable type="float4x4" name="ProjectionMatrix" system="Projection" />
-				<variable type="float4" name="Line.Color">
-					<row>
-						<value>0</value>
-						<value>2</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-				</variable>
-			</variables>
 			<macros />
 		</pass>
-		<pass name="The Grid Plane" type="shader" active="true" patchverts="1">
-			<shader type="vs" path="shaders\The Grid PlaneVS.glsl" entry="main" />
-			<shader type="ps" path="shaders\The Grid PlanePS.glsl" entry="main" />
-			<shader used="false" type="gs" path="shaders\The Grid PlaneGS.glsl" entry="main" />
+		<pass name="Multicolor Geo Shading" type="shader" active="true" patchverts="1">
+			<shader type="vs" path="shaders\Multicolor Geo ShadingVS.glsl" entry="main" />
+			<shader type="ps" path="shaders\Multicolor Geo ShadingPS.glsl" entry="main" />
+			<shader used="true" type="gs" path="shaders\Multicolor Geo ShadingGS.glsl" entry="main" />
 			<inputlayout>
 				<item value="Position" semantic="POSITION" />
 				<item value="Normal" semantic="NORMAL" />
 				<item value="Texcoord" semantic="TEXCOORD0" />
 			</inputlayout>
-			<rendertexture name="The Final Scene" />
-			<items>
-				<item name="The Grid Plane Geo" type="geometry">
-					<type>Plane</type>
-					<width>1</width>
-					<height>1</height>
-					<depth>1</depth>
-					<scaleX>50</scaleX>
-					<scaleY>50</scaleY>
-					<pitch>1.57079637</pitch>
-					<y>-17.2118378</y>
-					<topology>TriangleList</topology>
-				</item>
-			</items>
+			<rendertexture />
+			<items />
 			<itemvalues />
-			<variables>
-				<variable type="float4x4" name="matVP" system="ViewProjection" />
-				<variable type="float4x4" name="matGeo" system="GeometryTransform" />
-				<variable type="float4" name="lineColor">
-					<row>
-						<value>0</value>
-						<value>1</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-				</variable>
-			</variables>
 			<macros />
 		</pass>
-		<pass name="Matrix Texture Cube" type="shader" active="true" patchverts="1">
+		<pass name="Texture Geo Shader" type="shader" active="true" patchverts="1">
+			<shader type="vs" path="shaders\Texture Geo ShaderVS.glsl" entry="main" />
+			<shader type="ps" path="shaders\Texture Geo ShaderPS.glsl" entry="main" />
+			<inputlayout>
+				<item value="Position" semantic="POSITION" />
+				<item value="Normal" semantic="NORMAL" />
+				<item value="Texcoord" semantic="TEXCOORD0" />
+			</inputlayout>
+			<rendertexture />
+			<items />
+			<itemvalues />
+			<macros />
+		</pass>
+		<pass name="Matrix Texture Cube" type="shader" active="false" patchverts="1">
 			<shader type="vs" path="shaders\Matrix Texture CubeVS.glsl" entry="main" />
 			<shader type="ps" path="shaders\Matrix Texture CubePS.glsl" entry="main" />
 			<inputlayout>
@@ -152,7 +50,7 @@
 				<item value="Normal" semantic="NORMAL" />
 				<item value="Texcoord" semantic="TEXCOORD0" />
 			</inputlayout>
-			<rendertexture name="The Final Scene" />
+			<rendertexture />
 			<items>
 				<item name="MatrixTex" type="geometry">
 					<type>Cube</type>
@@ -197,25 +95,25 @@
 	</objects>
 	<cameras />
 	<settings>
-		<entry type="property" name="The Shader for the Sun" item="pipe" />
-		<entry type="file" name="Matrix Texture Cube" shader="vs" />
-		<entry type="file" name="Matrix Texture Cube" shader="ps" />
-		<entry type="file" name="The Shader for the Sun" shader="vs" />
-		<entry type="file" name="The Shader for the Sun" shader="ps" />
-		<entry type="file" name="The Shader for the Sun" shader="gs" />
-		<entry type="pinned" name="Material.Kd" owner="The Shader for the Sun" />
-		<entry type="pinned" name="Material.Ks" owner="The Shader for the Sun" />
-		<entry type="pinned" name="Material.Ka" owner="The Shader for the Sun" />
-		<entry type="pinned" name="Material.Shininess" owner="The Shader for the Sun" />
-		<entry type="pinned" name="Light.Intensity" owner="The Shader for the Sun" />
-		<entry type="pinned" name="Line.Width" owner="The Shader for the Sun" />
-		<entry type="pinned" name="NormalMatrix" owner="The Shader for the Sun" />
-		<entry type="pinned" name="Light.Position" owner="The Shader for the Sun" />
-		<entry type="pinned" name="Line.Color" owner="The Shader for the Sun" />
+		<entry type="file" name="True Wireframe" shader="vs" />
+		<entry type="file" name="True Wireframe" shader="ps" />
+		<entry type="file" name="True Wireframe" shader="gs" />
+		<entry type="file" name="Multicolor Geo Shading" shader="vs" />
+		<entry type="file" name="Multicolor Geo Shading" shader="ps" />
+		<entry type="file" name="Multicolor Geo Shading" shader="gs" />
+		<entry type="pinned" name=" -{—_&#01;" />
+		<entry type="pinned" name="" />
+		<entry type="pinned" name="" />
+		<entry type="pinned" name="@£4‹_&#01;" />
+		<entry type="pinned" name="" />
+		<entry type="pinned" name="" />
+		<entry type="pinned" name="°ŒIÿ_&#01;" />
+		<entry type="pinned" name="" />
+		<entry type="pinned" name="" />
 		<entry type="camera" fp="false">
 			<distance>50</distance>
-			<pitch>7</pitch>
-			<yaw>92</yaw>
+			<pitch>66</pitch>
+			<yaw>251</yaw>
 			<roll>360</roll>
 		</entry>
 		<entry type="clearcolor" r="0" g="0" b="0" a="0" />
