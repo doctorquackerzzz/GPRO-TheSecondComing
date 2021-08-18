@@ -3,12 +3,9 @@
 in vec2 vTexcoord;
 
 layout (binding = 0) uniform sampler2D uTex;
-layout (binding = 1) uniform sampler2D uTexTwo;
-
 layout (location = 0) out vec4 cFragColor;
 
 void main()
 {
 	cFragColor = texture(uTex, vTexcoord);
-
 }
