@@ -18,7 +18,9 @@
 					<height>1</height>
 					<depth>1</depth>
 					<pitch>1.57079637</pitch>
-					<x>-3.14466047</x>
+					<x>-0.11884141</x>
+					<y>-1.09130919</y>
+					<z>3.82830048</z>
 					<topology>TriangleList</topology>
 				</item>
 			</items>
@@ -31,7 +33,7 @@
 			</variables>
 			<macros />
 		</pass>
-		<pass name="Vertex Manipulation Geo (Triangle_Strip)" type="shader" active="true" patchverts="1">
+		<pass name="Vertex Manipulation Geo (Animation)" type="shader" active="true" patchverts="1">
 			<shader type="vs" path="shaders\Vertex Manipulation Geo (Triangle_Strip)VS.glsl" entry="main" />
 			<shader type="ps" path="shaders\Vertex Manipulation Geo (Triangle_Strip)PS.glsl" entry="main" />
 			<shader used="true" type="gs" path="shaders\Vertex Manipulation Geo (Triangle_Strip)GS.glsl" entry="main" />
@@ -48,9 +50,9 @@
 					<height>1</height>
 					<depth>1</depth>
 					<pitch>1.57079637</pitch>
-					<x>-0.572291851</x>
-					<y>0.0129311085</y>
-					<z>-2.2211647</z>
+					<x>-0.532978296</x>
+					<y>-0.909776688</y>
+					<z>0.462343931</z>
 					<topology>TriangleList</topology>
 				</item>
 			</items>
@@ -75,29 +77,11 @@
 			<variables>
 				<variable type="float4x4" name="ModelViewMatrix" system="GeometryTransform" />
 				<variable type="float4x4" name="MVP" system="ViewProjection" />
-				<variable type="float3x3" name="NormalMatrix">
-					<row>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-					<row>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-					<row>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-				</variable>
-				<variable type="float4x4" name="ProjectionMatrix" system="Projection" />
 				<variable type="float4" name="uManipPoint">
 					<row>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
+						<value>1</value>
+						<value>1</value>
+						<value>1</value>
 						<value>0</value>
 					</row>
 				</variable>
@@ -109,10 +93,11 @@
 						<value>0</value>
 					</row>
 				</variable>
+				<variable type="float" name="Time" system="Time" />
 			</variables>
 			<macros />
 		</pass>
-		<pass name="Vertex Manipulation Geo (Line_Strip)" type="shader" active="true" patchverts="1">
+		<pass name="Vertex Manipulation Geo (Positive Manip)" type="shader" active="true" patchverts="1">
 			<shader type="vs" path="shaders\Vertex Manipulation Geo (Line_Strip)VS.glsl" entry="main" />
 			<shader type="ps" path="shaders\Vertex Manipulation Geo (Line_Strip)PS.glsl" entry="main" />
 			<shader used="true" type="gs" path="shaders\Vertex Manipulation Geo (Line_Strip)GS.glsl" entry="main" />
@@ -128,8 +113,9 @@
 					<width>1</width>
 					<height>1</height>
 					<depth>1</depth>
-					<x>1.71364069</x>
-					<z>1.22405076</z>
+					<x>0.154506922</x>
+					<y>-0.804147959</y>
+					<z>-3.16393018</z>
 					<topology>TriangleList</topology>
 				</item>
 			</items>
@@ -170,49 +156,6 @@
 				</variable>
 				<variable type="float4x4" name="ModelViewMatrix" system="GeometryTransform" />
 				<variable type="float4x4" name="MVP" system="ViewProjection" />
-				<variable type="float3x3" name="NormalMatrix">
-					<row>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-					<row>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-					<row>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-				</variable>
-				<variable type="float4x4" name="ProjectionMatrix">
-					<row>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-					<row>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-					<row>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-					<row>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-				</variable>
 			</variables>
 			<macros />
 		</pass>
@@ -232,9 +175,9 @@
 					<width>1</width>
 					<height>1</height>
 					<depth>1</depth>
-					<x>-0.128073692</x>
-					<y>-0.225839138</y>
-					<z>0.494009018</z>
+					<x>-0.868768215</x>
+					<y>-1.30246043</y>
+					<z>-7.56931114</z>
 					<topology>TriangleList</topology>
 				</item>
 			</items>
@@ -249,8 +192,8 @@
 				</value>
 				<value variable="uManipPoint" for="Triangle Strip Manip Sphere 3">
 					<row>
-						<value>12</value>
-						<value>8</value>
+						<value>1</value>
+						<value>1</value>
 						<value>1</value>
 						<value>0</value>
 					</row>
@@ -267,49 +210,6 @@
 				</variable>
 				<variable type="float4x4" name="ModelViewMatrix" system="GeometryTransform" />
 				<variable type="float4x4" name="MVP" system="ViewProjection" />
-				<variable type="float3x3" name="NormalMatrix">
-					<row>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-					<row>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-					<row>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-				</variable>
-				<variable type="float4x4" name="ProjectionMatrix">
-					<row>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-					<row>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-					<row>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-					<row>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-						<value>0</value>
-					</row>
-				</variable>
 				<variable type="float4" name="uManipPoint">
 					<row>
 						<value>0</value>
@@ -321,7 +221,7 @@
 			</variables>
 			<macros />
 		</pass>
-		<pass name="Toychest Floor" type="shader" active="true" patchverts="1">
+		<pass name="Podiums" type="shader" active="true" patchverts="1">
 			<shader type="vs" path="shaders\Toychest FloorVS.glsl" entry="main" />
 			<shader type="ps" path="shaders\Toychest FloorPS.glsl" entry="main" />
 			<inputlayout>
@@ -336,13 +236,74 @@
 					<width>1</width>
 					<height>1</height>
 					<depth>1</depth>
-					<scaleX>10.3299999</scaleX>
-					<scaleY>13.7700005</scaleY>
-					<scaleZ>15.6300001</scaleZ>
+					<scaleX>2.5</scaleX>
+					<scaleY>2.5</scaleY>
 					<pitch>1.57079637</pitch>
 					<x>-0.177848339</x>
-					<y>-9.11389256</y>
+					<y>-2.63914967</y>
 					<z>0.304965019</z>
+					<topology>TriangleList</topology>
+				</item>
+				<item name="Pedestal Stand 2" type="geometry">
+					<type>Cube</type>
+					<width>2.5</width>
+					<height>2.5</height>
+					<depth>1</depth>
+					<pitch>1.57079637</pitch>
+					<x>-0.291066766</x>
+					<y>-2.636307</y>
+					<z>-3.23715973</z>
+					<topology>TriangleList</topology>
+				</item>
+				<item name="Pedestal Stand 3" type="geometry">
+					<type>Cube</type>
+					<width>2.5</width>
+					<height>2.5</height>
+					<depth>1</depth>
+					<pitch>1.57079637</pitch>
+					<y>-2.58455467</y>
+					<z>3.96593618</z>
+					<topology>TriangleList</topology>
+				</item>
+				<item name="Pedestal Stand 4" type="geometry">
+					<type>Cube</type>
+					<width>2.5</width>
+					<height>2.5</height>
+					<depth>1</depth>
+					<pitch>1.57079637</pitch>
+					<x>-0.442101479</x>
+					<y>-2.79824185</y>
+					<z>-7.34816456</z>
+					<topology>TriangleList</topology>
+				</item>
+			</items>
+			<itemvalues />
+			<variables>
+				<variable type="float4x4" name="ModelViewMatrix" system="GeometryTransform" />
+				<variable type="float4x4" name="MVP" system="ViewProjection" />
+			</variables>
+			<macros />
+		</pass>
+		<pass name="Background Tex" type="shader" active="true" patchverts="1">
+			<shader type="vs" path="shaders\Background TexVS.glsl" entry="main" />
+			<shader type="ps" path="shaders\Background TexPS.glsl" entry="main" />
+			<inputlayout>
+				<item value="Position" semantic="POSITION" />
+				<item value="Normal" semantic="NORMAL" />
+				<item value="Texcoord" semantic="TEXCOORD0" />
+			</inputlayout>
+			<rendertexture name="The Final Scene" />
+			<items>
+				<item name="Demo Background" type="geometry">
+					<type>Plane</type>
+					<width>1</width>
+					<height>1</height>
+					<depth>1</depth>
+					<scaleX>30</scaleX>
+					<scaleY>15</scaleY>
+					<yaw>4.71238899</yaw>
+					<x>-2.29957581</x>
+					<z>-1.88978374</z>
 					<topology>TriangleList</topology>
 				</item>
 			</items>
@@ -368,24 +329,27 @@
 		</pass>
 	</pipeline>
 	<objects>
-		<object type="texture" path="..\678-978.jpg" vflip="false" min_filter="Linear" mag_filter="Nearest" wrap_s="Repeat" wrap_t="Repeat">
-			<bind slot="0" name="Toychest Floor" />
+		<object type="texture" path="..\678-978.jpg" vflip="false" min_filter="Linear" mag_filter="Nearest" wrap_s="Repeat" wrap_t="Repeat" />
+		<object type="texture" path="..\pexels-photo-129733.jpeg" vflip="false" min_filter="Linear" mag_filter="Nearest" wrap_s="Repeat" wrap_t="Repeat">
+			<bind slot="0" name="Podiums" />
 		</object>
-		<object type="texture" path="..\pexels-photo-129733.jpeg" vflip="false" min_filter="Linear" mag_filter="Nearest" wrap_s="Repeat" wrap_t="Repeat" />
 		<object type="texture" path="..\photo-1610824224972-db9878a2fe2c.jpg" vflip="false" min_filter="Linear" mag_filter="Nearest" wrap_s="Repeat" wrap_t="Repeat" />
 		<object type="rendertexture" name="The Final Scene" format="RGB" rsize="1.000000,1.000000" clear="true" />
+		<object type="texture" path="..\istockphoto-1220063918-170667a.jpg" vflip="false" min_filter="Linear" mag_filter="Nearest" wrap_s="Repeat" wrap_t="Repeat">
+			<bind slot="0" name="Background Tex" />
+		</object>
 	</objects>
 	<cameras />
 	<settings>
-		<entry type="property" name="Playbox Floor" item="pipe" />
-		<entry type="pinned" name="NormalMatrix" owner="Vertex Manipulation Geo (Triangle_Strip)" />
-		<entry type="pinned" name="uManipPoint" owner="Vertex Manipulation Geo (Triangle_Strip)" />
-		<entry type="pinned" name="color" owner="Vertex Manipulation Geo (Triangle_Strip)" />
-		<entry type="pinned" name="ProjectionMatrix" owner="Vertex Manipulation Geo (Line_Strip)" />
+		<entry type="property" name="The Final Scene" item="pipe" />
+		<entry type="file" name="The Final Scene" shader="vs" />
+		<entry type="file" name="The Final Scene" shader="ps" />
+		<entry type="pinned" name="uManipPoint" owner="Vertex Manipulation Geo (Animation)" />
+		<entry type="pinned" name="color" owner="Vertex Manipulation Geo (Animation)" />
 		<entry type="camera" fp="false">
-			<distance>21</distance>
-			<pitch>9</pitch>
-			<yaw>159</yaw>
+			<distance>13</distance>
+			<pitch>0</pitch>
+			<yaw>267</yaw>
 			<roll>360</roll>
 		</entry>
 		<entry type="clearcolor" r="0" g="0" b="0" a="0" />

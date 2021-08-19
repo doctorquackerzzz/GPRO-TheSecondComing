@@ -1,15 +1,17 @@
 #version 450
+
 /*
-File name: Podiums_VS.glsl
+File name: Background Tex_VS.glsl
 Name: Nico Omenetto
-Purpose: To display the geometry shader enabled objects via wooden pedestals for displayment
+Purpose: To provide a texturized background without no black screen behind, so that theres more displayment of the geometry shader enabled objects
 
 RESOURCES: Open GL's 4.6 Specifications <https://www.khronos.org/registry/OpenGL/specs/gl/glspec46.core.pdf>
 GLSL 4.6 Specifications <https://www.khronos.org/registry/OpenGL/specs/gl/GLSLangSpec.4.60.pdf>
 
-WOOD TEXTURE PICTURE: <https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fwood%2520texture%2F&psig=AOvVaw09ESTXasP9ZDqqaAbBR0_3&ust=1629424547673000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCOi-mMz9u_ICFQAAAAAdAAAAABAD>
+Background Picture: <https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fbackgrounds%2Fcolors%2Fdark&psig=AOvVaw1wLX7Q05owb8ccwv1kwvwv&ust=1629413180340000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCIik4p_Tu_ICFQAAAAAdAAAAABAD>
 
-Lab 8's demonstration of binding layouts and textures (CLASS)
+Lab 8's demonstration of binding layouts and textures (CLASS GIVEN)
+
 */
 
 //layouts
@@ -20,7 +22,7 @@ layout (location = 1) in vec2 aTexcoord;
 uniform mat4 MVP;
 uniform mat4 ModelViewMatrix;
 
-//output varyings
+//outputs
 out vec2 vTexcoord;
 out vec4 vPos;
 
